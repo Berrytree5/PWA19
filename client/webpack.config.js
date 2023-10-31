@@ -37,9 +37,9 @@ module.exports = () => {
         theme_color: '#2196F3',
         icons: [
           {
-            src: path.resolve('src/assets/icon.png'),
+            src: path.resolve('src/images/logo.png'),
             sizes: [96, 128, 192, 256, 384, 512],
-            destination: path.join('assets', 'icons'),
+            destination: path.join('assets', 'logo'),
           },
         ],
       }),
