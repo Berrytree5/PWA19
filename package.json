@@ -4,12 +4,12 @@
   "description": "PWA Text editor",
   "main": "server.js",
   "scripts": {
-    "start:dev": "",
+    "start:dev": "concurrently \"cd server && npm run server\" \"cd client && npm run dev\"",
     "start": "npm run build && node ./server/server.js",
-    "server": "",
-    "build": "",
-    "install": "npm install",
-    "client": "npm start"
+    "server": "cd server nodemon server.js --ignore client",
+    "build": "cd client && npm run bild",
+    "install": "cd server && npm install",
+    "client": "cd client && npm start"
   },
   "keywords": [],
   "author": "berrytree5",
