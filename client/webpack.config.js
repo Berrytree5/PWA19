@@ -2,6 +2,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const WebpackPwaManifest = require('webpack-pwa-manifest');
 const path = require('path');
 const { InjectManifest } = require('workbox-webpack-plugin');
+const { url } = require('inspector');
 
 module.exports = () => {
   return {
@@ -29,9 +30,9 @@ module.exports = () => {
 
       // Add WebpackPwaManifest for manifest file
       new WebpackPwaManifest({
-        name: 'Your PWA Name',
-        short_name: 'PWA',
-        description: 'Your PWA description',
+        name: 'Just Another Text Editor',
+        short_name: 'JATE',
+        description: 'Creates notes with or without active connection',
         background_color: '#ffffff',
         theme_color: '#2196F3',
         icons: [
@@ -66,6 +67,12 @@ module.exports = () => {
             loader: 'babel-loader',
             options: {
               presets: ['@babel/preset-env'],
+
+                plugins: [
+                          "@babel/plugin-proposal-object-rest-spread",
+
+                          "@babel/transorm-runtime",
+                ]
             },
           },
         },
